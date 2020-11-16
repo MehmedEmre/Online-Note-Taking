@@ -1,0 +1,82 @@
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.dll.config
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Common.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccsessLayer.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Entities.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Common.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Configuration.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Frameworks.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.Types.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Protocol.Core.Types.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Versioning.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\Octokit.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Common.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccsessLayer.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccsessLayer.dll.config
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Common.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Configuration.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Frameworks.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.Types.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Protocol.Core.Types.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\NuGet.Versioning.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\Octokit.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\FakeData.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CopyComplete
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Core.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Core.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.dll.config
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.BusinessLayer.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Common.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Core.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccsessLayer.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Entities.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Common.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Configuration.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Frameworks.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.Types.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Protocol.Core.Types.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Versioning.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\Octokit.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\FakeData.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Common.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Core.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccsessLayer.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.DataAccsessLayer.dll.config
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Common.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Configuration.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Frameworks.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Packaging.Core.Types.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Protocol.Core.Types.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\NuGet.Versioning.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\Octokit.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\bin\Debug\FakeData.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.csproj.CopyComplete
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.BusinessLayer\obj\Debug\MyEvernote.BusinessLayer.pdb

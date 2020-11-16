@@ -1,0 +1,154 @@
+﻿@using MyEvernote.Entities;
+@using System.Web.Optimization
+@using MyEvernote.WebApp.CurrentSession
+
+@Scripts.Render("~/js/all")
+
+@Styles.Render("~/css/all")
+
+@Styles.Render("~/js/app")
+
+@{
+    EvernoteUser user = null;
+
+    if (CSession.User != null)
+    {
+
+        user = CSession.User;
+
+    }
+
+
+}
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bgcolor">
+    <div class="container">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("Index","Home")">
+                        <img src="~/SVG/home.svg" />  Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+
+                @if (user != null)
+                {
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="/Note/MyNotes" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="~/SVG/tools.svg" /> Yönetim
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Home/ShowProfile/@user.ID">Profilim</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Note/Create">Not Ekle</a>
+                            <a class="dropdown-item" href="/Note/Index">Notlarım</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/Note/MyMostLikedNote">Beğendiklerim</a>
+                            <div class="dropdown-divider"></div>
+
+                            @if (user.isAdmin)
+                            {
+                                <a class="dropdown-item" href="/Categories/Index">Kategoriler</a>
+                                <a class="dropdown-item" href="/Categories/Create">Kategori Ekle</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/Evernoteuser/Index">Kullanıcılar</a>
+                                <a class="dropdown-item" href="/Evernoteuser/Edit/@user.ID">Kullanıcı İşlemleri</a>
+                            }
+
+
+                        </div>
+                    </li>
+                }
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/MostLiked">
+                        <img src="~/SVG/heart.svg" /> En Beğenilenler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/Index">
+
+                        <img src="~/SVG/light-bulb.svg" /> Son Yazılanlar
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("About","Home")">
+
+                        <img src="~/SVG/repo.svg" />Hakkımızda
+
+                    </a>
+                </li>
+            </ul>
+
+
+            <ul class="navbar-nav ml-auto">
+
+                @if (user == null)
+                {
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Login","Home")">
+                            <img src="~/SVG/sign-in.svg" />Giriş
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Register","Home")">
+                            <img src="~/SVG/person.svg" /> Üye Ol
+                        </a>
+                    </li>
+                }
+                else
+                {
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/ShowProfile/@user.ID">
+                            <div class="profile__nav_avatar">
+                                <img src="~/Images/@user.ProfileImageFileName" alt="@user.Name">
+                            </div>
+                            @user.Name
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Logout", "Home")">
+                            <img src="~/SVG/sign-out.svg" />Çıkış
+                        </a>
+                    </li>
+                }
+
+            </ul>
+
+
+        </div>
+    </div>
+</nav>
+
+<main style="margin-bottom:100px;margin-top:50px" ng-app="app">
+
+    @RenderBody()
+
+</main>
+
+
+
+
+@RenderSection("Footer", required: false)
+
+
+@RenderSection("Scripts", false)

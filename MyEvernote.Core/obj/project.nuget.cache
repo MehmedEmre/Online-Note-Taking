@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jOHqerHQD8DkoI6Tgiatrtj8ItWl6bnhDwAlTbEFb0VhcYQtDba6RWy8nsPapTyioPdpIuADWxjafIAz9QXvMw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mehme\\Desktop\\Online Note Taking\\MyEvernote.Core\\MyEvernote.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

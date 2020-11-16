@@ -1,0 +1,136 @@
+﻿@using MyEvernote.Entities
+@using MyEvernote.WebApp.CurrentSession
+@model List<Comment>
+
+<style>
+
+    .btn-group-sm > .btn, .btn-sm {
+        padding: .13rem .5rem;
+        font-size: .8rem;
+        line-height: 1.5;
+        border-radius: .2rem;
+    }
+
+
+    @* İçi boşsa ve içeriğe focuslanmadıysak  içeriğin başına yazıyı ekle *@ 
+    
+    [contentEditable=true]:before {
+        content: attr(data-placeholder)
+    }
+
+</style>
+
+
+@{
+    EvernoteUser user = null;
+
+    if (CSession.User != null)
+    {
+        user = CSession.User;
+    }
+
+
+}
+
+@if (Model.Count == 0)
+{
+
+    <p>Bu not için henüz yorum yapılmamış!</p>
+
+}
+
+
+@foreach (var item in Model)
+{
+
+    <div class="media mt-2" id="parent_@item.ID">
+
+        <a class="mt-1" href="/Home/ShowProfile/@item.Owner.ID">
+            <div class="profile__card_avatar">
+                <img src="~/Images/@item.Owner.ProfileImageFileName" class="mr-3" alt="@item.Owner.Name">
+            </div>
+        </a>
+        <div class="media-body" style="overflow: hidden;word-wrap: break-word;">
+
+            <div class="col-sm-11 ml-1 mt-1 p-1" id="comment_@item.ID" contenteditable="false" style="overflow:hidden">
+                @item.Text
+            </div>
+
+            <div class="mt-3">
+                @if (user != null && user.ID == item.Owner.ID)
+                {
+                    <span class="float-right">
+
+
+                        <a href="#" onclick="edit('comment_@item.ID',this,'@item.ID')" data-edit-mode="false">
+                            <i class="fa fa-edit" title="Düzenle"></i>
+                        </a>
+
+                        <a href="#" onclick="remove('@item.ID','parent_@item.ID','comment_@item.ID')">
+                            <i class="fa fa-trash" title="Yorumu Sil"></i>
+                        </a>
+
+
+                    </span>
+                }
+                <small class="float-left ml-1">
+                    <span>Tarih: @item.ModifiedOn</span>&nbsp;
+                    <span>@item.Owner.Name</span>
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+}
+
+<hr />
+
+
+@if(user != null)
+{
+    <div class="media mt-3 mb-3">
+
+        <div class="media-body" style="overflow: hidden;word-wrap: break-word;">
+
+
+            <div id="commentWrite" class="col-sm-11 ml-1 mt-1 p-1 mb-1 comment-focus" contenteditable=true data-placeholder="Yorum Yaz...">
+
+            </div>
+
+            <button style="display:none" id ="writeCommentID" class="btn btn-outline-primary btn-sm float-left mt-1" onclick="sendComment('commentWrite')">Gönder</button>
+
+
+        </div>
+
+    </div>
+
+}
+
+
+<script>
+
+    var comment = document.getElementById("commentWrite")
+
+    comment.addEventListener("focusin", function () {
+
+        $("#writeCommentID").show("fast");
+
+        comment.removeAttribute("data-placeholder")
+
+    })
+
+    comment.addEventListener("focusout", function () {
+
+        setTimeout(function () {
+            $("#writeCommentID").hide("fast");
+        }, 3000)
+
+        if (comment.innerText == ""){
+            comment.setAttribute("data-placeholder","Yorum Yaz...")
+        }
+    })
+
+</script>

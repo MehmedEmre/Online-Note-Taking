@@ -1,0 +1,83 @@
+﻿@using MyEvernote.Entities
+@using MyEvernote.WebApp.CurrentSession
+
+@model List<Note>
+
+
+@{
+
+    EvernoteUser user = null;
+
+
+    if (CSession.User != null)
+    {
+
+        user = CSession.User;
+
+    }
+
+
+}
+
+@foreach (Note item in Model)
+{
+
+
+
+    <div class="col-6 mb-5" data-note-id="@item.ID">
+        <div class="card h-100">
+            <a href="/Note/Details/@item.ID"><img class="card-img-top" src="http://placehold.it/700x400" alt="@item.Title"></a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="/Note/Details/@item.ID">@item.Title</a>
+                </h4>
+
+                <p class="card-text">
+
+                    @if (string.IsNullOrEmpty(item.Text) == false && item.Text.Length > 120)
+                    {
+                        @(item.Text.Substring(0, 120) + " ...")
+                    <p class="float-right"><a href="#" data-toggle="modal" data-target="#TextModal" data-note-id="@item.ID" class="btn btn-outline-primary btn-sm">Devamı</a></p>
+                }
+                else
+                {
+                    @item.Text
+                }
+
+                    </p>
+
+                </div>
+
+                <div class="card-footer">
+
+                    @if (user != null)
+                    {
+                        <button type="button" class="btn btn-light float-left" data-liked-mod="false" onclick="likedNote(this,'@item.ID')">
+                            <img src="~/SVG/heart empty.svg" />&nbsp;<span class="like-count">@item.likeCount</span>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary btn-sm float-right" data-toggle="modal" data-target="#MyModal" data-note-id="@item.ID">Yorum Yap</button>
+                    }
+
+                </div>
+
+                <div class="card-footer">
+
+                    <img src="~/SVG/clock (2).svg" /> <small>@item.ModifiedOn.ToString("dd.MM.yy HH:mm")</small>
+                    <span class="float-right">
+                        <a href="/Home/ShowProfile/@item.Owner.ID">
+                            <div class="profile__card_avatar">
+                                <img src="~/Images/@item.Owner.ProfileImageFileName" alt="@item.Owner.Name">
+                            </div>
+                            <small style="margin-top: 5px; display: inline-block;">
+                                @item.Owner.Name
+                            </small>
+                        </a>
+
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    }
+

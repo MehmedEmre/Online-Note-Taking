@@ -1,0 +1,137 @@
+﻿@using MyEvernote.Entities
+
+@model List<Note>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@section Scripts{
+
+    <script src="~/Scripts/Ajax/ajaxIndex.js"></script>
+
+}
+
+<style>
+    form {
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+
+
+            <!-- User profile -->
+            <div class="panel panel-default mb-1">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Not Yönetim Paneli</h2>
+                </div>
+
+                <div class="panel-body">
+
+
+                    <div class="profile__header">
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- User info -->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p>
+                        @Html.ActionLink("Yeni Not Ekle", "Create", null, new { @class = "btn btn-success btn-sm" })
+                    </p>
+                </div>
+                <div class="panel-body">
+
+
+                    <div class="row">
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <div class="col-6 mb-5">
+                                <div class="card h-100">
+                                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt="@Model[i].Title"></a>
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a href="#">@Model[i].Title</a>
+                                        </h4>
+
+                                        <p class="card-text">
+
+                                            @if (string.IsNullOrEmpty(@Model[i].Text) == false && @Model[i].Text.Length > 150)
+                                            {
+                                                @(@Model[i].Text.Substring(0, 150) + " ...");
+
+                                                @Html.ActionLink("Devamı", "Details", new { id = Model[i].ID }, new { @class = "btn btn-outline-primary btn-sm mt-2  float-right", type = "button" })
+                                            }
+                                            else
+                                            {
+                                                @Model[i].Text
+                                                @Html.ActionLink("Detay", "Details", new { id = Model[i].ID }, new { @class = "btn btn-outline-primary btn-sm mt-2  float-right", type = "button" })
+                                            }
+
+                                            <button class="btn btn-outline-primary btn-sm float-right mt-2 mr-1" data-toggle="modal" data-target="#MyModal" data-note-id="@Model[i].ID">Yorumlar</button>
+
+
+                                        </p>
+
+                                    </div>
+
+
+                                    <div class="card-footer">
+
+
+                                        <b class="float-left mr-2">Taslak:</b>
+
+                                        @Html.EditorFor(model => model[i].isDraft, new { htmlAttributes = new { @class = "float-left mt-2", disabled = "disabled" } })
+
+                                        @Html.ActionLink("Sil", "Delete", new { id = Model[i].ID }, new { @class = "btn btn-outline-danger float-right", type = "button" })
+
+                                    </div>
+
+                                    <div class="card-footer">
+
+                                        <img src="~/SVG/clock (2).svg" /> <small>@Model[i].ModifiedOn.ToString("dd.MM.yy HH:mm")</small>
+                                        <span class="float-right">
+                                            <a href="/Home/ShowProfile/@Model[i].Owner.ID">
+                                                <div class="profile__card_avatar">
+                                                    <img src="~/Images/@Model[i].Owner.ProfileImageFileName" alt="@Model[i].Owner.Name">
+                                                </div>
+                                                @Model[i].Owner.Name
+                                            </a>
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+@MyBootstrap.MyModal(title: "Yorumlar")

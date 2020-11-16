@@ -1,0 +1,12 @@
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Entities\bin\Debug\MyEvernote.Entities.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Entities\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csproj.CoreCompileInputs.cache
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Entities\bin\Debug\MyEvernote.Entities.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Entities\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.pdb

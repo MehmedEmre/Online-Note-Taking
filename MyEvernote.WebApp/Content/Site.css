@@ -1,0 +1,586 @@
+﻿body {
+    position:relative;
+    min-height: 120vh;
+}
+
+footer{
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    margin-bottom:-250px;
+}
+
+
+    .bgcolor {
+    background-color: #007bff;
+}
+
+ /*Comment Focus*/
+.comment-focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #afd4fb;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #afd4fb;
+    border-radius: 0.5px;
+}
+
+
+.success-comment-focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #c0faa8;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #c0faa8;
+    border-radius: 0.5px;
+}
+
+.danger-comment-focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #fbc1b7;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #fbc1b7;
+    border-radius: 0.5px;
+}
+
+/*CARD*/
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+    .card:hover {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: rgba(0, 123, 255, 0.16);
+        background-clip: border-box;
+        border: 1px solid #007bff;
+        border-radius: .25rem;
+    }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/****************************************************************Card Avatar****************************************************************/
+.profile__card_avatar {
+    float: left;
+    margin-top: 0px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 3px;
+}
+
+@media (min-width: 768px) {
+    .profile__card_avatar {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.profile__card_avatar > img {
+    width: 100%;
+    height: auto;
+}
+
+/****************************************************************Nav Avatar****************************************************************/
+.profile__nav_avatar {
+    float: left;
+    margin-top: -5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 3px;
+}
+
+@media (min-width: 768px) {
+    .profile__nav_avatar {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.profile__nav_avatar > img {
+    width: 100%;
+    height: auto;
+}
+
+
+/****************************************************************ShowProfile****************************************************************/
+
+/*** General styles ***/
+.panel {
+    box-shadow: none;
+}
+
+.panel-heading {
+    border-bottom: 0;
+}
+
+.panel-title {
+    font-size: 17px;
+}
+
+.panel-title > small {
+    font-size: .75em;
+    color: #999999;
+}
+
+.panel-body *:first-child {
+    margin-top: 0;
+}
+
+.panel-footer {
+    border-top: 0;
+}
+
+.panel-default > .panel-heading {
+    color: #333333;
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+/**
+ * Profile
+ */
+/*** Profile: Header  ***/
+.profile__avatar {
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+    border-style:solid;
+    border-width:5px;
+    border-color:#007bff;
+}
+
+
+@media (min-width: 768px) {
+    .profile__avatar {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.profile__avatar > img {
+    width: 100%;
+    height: auto;
+}
+
+.profile__header {
+    overflow: hidden;
+}
+
+.profile__header p {
+    margin: 20px 0;
+}
+
+/*Hover*/
+.profile__avatar:hover{
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #84bcf7;
+}
+
+
+@media (min-width: 768px) {
+    .profile__avatar:hover {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.profile__avatar > img:hover {
+    width: 100%;
+    height: auto;
+}
+
+.profile__header:hover {
+    overflow: hidden;
+}
+
+.profile__header p:hover {
+    margin: 20px 0;
+}
+
+/*Hover*/
+
+/*** Profile: Table ***/
+@media (min-width: 992px) {
+    .profile__table tbody th {
+        width: 200px;
+    }
+}
+/*** Profile: Recent activity ***/
+.profile-comments__item {
+    position: relative;
+    padding: 15px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+    .profile-comments__item:last-child {
+        border-bottom: 0;
+    }
+
+    .profile-comments__item:hover,
+    .profile-comments__item:focus {
+        background-color: #f5f5f5;
+    }
+
+        .profile-comments__item:hover .profile-comments__controls,
+        .profile-comments__item:focus .profile-comments__controls {
+            visibility: visible;
+        }
+
+.profile-comments__controls {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    visibility: hidden;
+}
+
+    .profile-comments__controls > a {
+        display: inline-block;
+        padding: 2px;
+        color: #999999;
+    }
+
+        .profile-comments__controls > a:hover,
+        .profile-comments__controls > a:focus {
+            color: #333333;
+        }
+
+.profile-comments__avatar {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+    .profile-comments__avatar > img {
+        width: 100%;
+        height: auto;
+    }
+
+.profile-comments__body {
+    overflow: hidden;
+}
+
+.profile-comments__sender {
+    color: #333333;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+    .profile-comments__sender > small {
+        margin-left: 5px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+    }
+
+@media (max-width: 767px) {
+    .profile-comments__sender > small {
+        display: block;
+        margin: 5px 0 10px;
+    }
+}
+
+.profile-comments__content {
+    color: #999999;
+}
+/*** Profile: Contact ***/
+.profile__contact-btn {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+}
+
+.profile__contact-hr {
+    position: relative;
+    border-color: rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+}
+
+    .profile__contact-hr:before {
+        content: "OR";
+        display: block;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background-color: #f5f5f5;
+        color: #c6c6cc;
+    }
+
+.profile__contact-info-item {
+    margin-bottom: 30px;
+}
+
+    .profile__contact-info-item:before,
+    .profile__contact-info-item:after {
+        content: " ";
+        display: table;
+    }
+
+    .profile__contact-info-item:after {
+        clear: both;
+    }
+
+    .profile__contact-info-item:before,
+    .profile__contact-info-item:after {
+        content: " ";
+        display: table;
+    }
+
+    .profile__contact-info-item:after {
+        clear: both;
+    }
+
+.profile__contact-info-icon {
+    float: left;
+    font-size: 18px;
+    color: #999999;
+}
+
+.profile__contact-info-body {
+    overflow: hidden;
+    padding-left: 20px;
+    color: #999999;
+}
+
+    .profile__contact-info-body a {
+        color: #999999;
+    }
+
+        .profile__contact-info-body a:hover,
+        .profile__contact-info-body a:focus {
+            color: #999999;
+            text-decoration: none;
+        }
+
+.profile__contact-info-heading {
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #999999;
+}
+
+/* Success  */
+
+/**
+ * Extracted from: SweetAlert
+ * Modified by: Istiak Tridip
+ */
+.success-checkmark {
+    width: 80px;
+    height: 115px;
+    margin: 0 auto;
+    .check-icon
+
+{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: content-box;
+    border: 4px solid #4CAF50;
+    &::before
+
+{
+    top: 3px;
+    left: -2px;
+    width: 30px;
+    transform-origin: 100% 50%;
+    border-radius: 100px 0 0 100px;
+}
+
+&::after {
+    top: 0;
+    left: 30px;
+    width: 60px;
+    transform-origin: 0 50%;
+    border-radius: 0 100px 100px 0;
+    animation: rotate-circle 4.25s ease-in;
+}
+
+&::before, &::after {
+    content: '';
+    height: 100px;
+    position: absolute;
+    background: #FFFFFF;
+    transform: rotate(-45deg);
+}
+
+.icon-line {
+    height: 5px;
+    background-color: #4CAF50;
+    display: block;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    &.line-tip
+
+{
+    top: 46px;
+    left: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+    animation: icon-line-tip 0.75s;
+}
+
+&.line-long {
+    top: 38px;
+    right: 8px;
+    width: 47px;
+    transform: rotate(-45deg);
+    animation: icon-line-long 0.75s;
+}
+
+}
+
+.icon-circle {
+    top: -4px;
+    left: -4px;
+    z-index: 10;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    box-sizing: content-box;
+    border: 4px solid rgba(76, 175, 80, .5);
+}
+
+.icon-fix {
+    top: 8px;
+    width: 5px;
+    left: 26px;
+    z-index: 1;
+    height: 85px;
+    position: absolute;
+    transform: rotate(-45deg);
+    background-color: #FFFFFF;
+}
+
+}
+}
+
+@keyframes rotate-circle {
+    0% {
+        transform: rotate(-45deg);
+    }
+
+    5% {
+        transform: rotate(-45deg);
+    }
+
+    12% {
+        transform: rotate(-405deg);
+    }
+
+    100% {
+        transform: rotate(-405deg);
+    }
+}
+
+@keyframes icon-line-tip {
+    0% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+
+    54% {
+        width: 0;
+        left: 1px;
+        top: 19px;
+    }
+
+    70% {
+        width: 50px;
+        left: -8px;
+        top: 37px;
+    }
+
+    84% {
+        width: 17px;
+        left: 21px;
+        top: 48px;
+    }
+
+    100% {
+        width: 25px;
+        left: 14px;
+        top: 45px;
+    }
+}
+
+@keyframes icon-line-long {
+    0% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+
+    65% {
+        width: 0;
+        right: 46px;
+        top: 54px;
+    }
+
+    84% {
+        width: 55px;
+        right: 0px;
+        top: 35px;
+    }
+
+    100% {
+        width: 47px;
+        right: 8px;
+        top: 38px;
+    }
+}

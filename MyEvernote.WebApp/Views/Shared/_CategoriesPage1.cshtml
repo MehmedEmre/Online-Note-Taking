@@ -1,0 +1,17 @@
+﻿@using MyEvernote.Entities
+
+@model List<Category>
+
+<h4 class="my-4">
+    <img src="~/SVG/list-unordered.svg" /> Kategoriler
+</h4>
+<div class="list-group">
+
+    <a href="@Url.Action("Index","Home")" class="list-group-item text-decoration-none">Tümü</a>
+
+    @foreach (var item in Model)
+    {
+        <a href="/Categories/CategorySelect/@item.ID" title="@item.Description" class="list-group-item text-decoration-none">@item.Title</a>
+        @*@Url.Action("Index","Home",new {id = @item.ID })*@
+    }
+</div>

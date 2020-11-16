@@ -1,0 +1,75 @@
+﻿
+@using MyEvernote.WebApp.ViewModel
+
+@model OkViewModel
+
+<link href="~/Content/login_register.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/RegisterAndLogin/RegisterAndLogin.js"></script>
+
+@{ Layout = ""; }
+
+
+<style>
+
+    .validation-summary-errors ul li {
+        list-style-type: none;
+    }
+
+
+    .jumbotron {
+        background-color: rgba(109, 191, 73, 0.47);
+        opacity: 0.9;
+    }
+
+</style>
+
+<div class="sidenav">
+    <div class="login-main-text">
+        <h2>Mükemmel</h2><br />
+        <p>Herşey tamam görünüyor!</p><br />
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+        <div class="login-form">
+
+            <div class="jumbotron">
+                <h1 class="display-4">@Model.Title</h1>
+                <p class="lead">@Model.Header</p>
+
+                @foreach (var item in Model.Items)
+                {
+                    <p>@item</p>
+                }
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+@{ 
+
+    string js = string.Empty;
+
+    if (Model.IsRedirecting)
+    {
+
+        js = "setTimeout(function () {window.location = '"+Model.RedirectUrl+"'},"+Model.RedirectingTimeOut+")";
+    }
+
+}
+
+
+<script>
+
+    //Bir fonksiyonu verilen süreden sonra çalıştırmayı sağlar
+
+    @Html.Raw(js);
+
+
+
+</script>

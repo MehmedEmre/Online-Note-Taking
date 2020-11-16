@@ -1,0 +1,496 @@
+﻿@using MyEvernote.Entities.ValueObjects
+@using Newtonsoft.Json
+@using MyEvernote.Entities
+@using MyEvernote.WebApp.CurrentSession
+
+@model ProfileViewModel
+
+
+@section Scripts{
+
+    <script src="~/Scripts/Angular/ShowProfile.js"></script>
+}
+
+@{
+
+    EvernoteUser user = null;
+
+
+    if (CSession.User != null)
+    {
+
+        user = CSession.User;
+
+    }
+
+}
+
+<style>
+
+    .form-control {
+        display: inline-block
+    }
+</style>
+
+
+
+<div class="container" ng-controller="ShowProfile">
+    <div class="row" ng-init="person = @JsonConvert.SerializeObject(Model)">
+        <div class="col-xs-12 col-sm-9">
+
+
+            <!-- User profile -->
+            <div class="panel panel-default mb-1" style="height:180px">
+                <div class="panel-heading">
+                    <h4 class="panel-title ml-2">Kullanıcı Profili</h4>
+                </div>
+
+
+                <div class="panel-body">
+
+                    @if (user == null || user.ID != Model.ID)
+                    {
+                        <div id="ProfileAvatar" class="profile__avatar" style="cursor:pointer">
+
+                            <img src="~/Images/@Model.ProfileImageFileName" alt="@Model.Name">
+
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="ProfileAvatar" class="profile__avatar" style="cursor:pointer" ng-click="UploadImageAvatar()">
+
+                            <img src="~/Images/@Model.ProfileImageFileName" alt="@Model.Name">
+
+                        </div>
+                    }
+
+
+
+
+                    <div class="profile__header">
+
+                        <h4>
+                            @Model.Username
+                            @if (Model.isAdmin)
+                            {
+                                <small>Admin</small>
+                            }
+                            else
+                            {
+                                <small>Standart User</small>
+                            }
+
+                        </h4>
+
+                        <strong style="display:block">Açıklama</strong>
+
+
+
+                        <form class="col-auto" id="0" name="form0" style="padding-right:0px;padding-left:0px">
+
+
+                            <div class="mr-5" style="float:left;display:inline-block">
+                                {{person.Description}}
+                            </div>
+
+                            <div class="form-group" style="display:none;">
+
+                                <textarea class="form-control mb-1" name="text" rows="2" style="max-width: 100%" ng-maxlength="250" ng-model="person.Description"></textarea>
+
+                                <small style="color:red" ng-show="minmax0= form0.text.$error.maxlength">Açıklama Kısmı Maximum 250 Karakter Olabilir.</small>
+                            </div>
+
+                            <div class="form-row col-auto" style="float:right;display:none;">
+                                <button style="float:right" type="button" ng-disabled="form0.$invalid" ng-click="send(0,person)" class="btn btn-success">Kaydet</button>
+                                <button style="float:right" type="button" ng-click="cancel(0)" class="btn btn-danger  ml-1">İptal</button>
+                            </div>
+
+
+                            @if (user != null && user.ID == Model.ID)
+                            {
+                                <a href="#" ng-click="edit(0,person)" style="float:right;display:inline-block;margin-right:30px">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                            }
+                           
+
+
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mb-2">
+                @*Uyarı Mesajları*@
+                <div>
+                    <small ng-show="minmax" style="color:red" class="ml-3">Resim Adı Uzunluğu Minumum 5 Maximum 15 Karakter Olmalıdır.</small>
+                    <small ng-show="format" style="color:red" class="ml-3">Yalnızca .JPEG .JPG ve PNG formatında yükleme yapılabilir.</small>
+                </div>
+
+                @using (Html.BeginForm("UpdateProfileImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.HiddenFor(x => x.ID)
+
+                    <div style="display: none; margin-top: 0em;">
+                        <div class="input-group col-4" id="upload" style="float:left">
+
+                            <div class="custom-file" style="display:none">
+                                <input type="file" name="ProfileImage" class="custom-file-input" id="inputID" onchange="angular.element(this).scope().ValidationUploadImage(this)">
+                                <label type="text" class="custom-file-label" name="ProfileImageText" id="labelID" for="inputID">{{FileName}}</label>
+                            </div>
+                            <div class="input-group-append" ng-show="submitButton">
+                                <button class="btn btn-outline-primary" type="submit" id="buttonID">Kaydet</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                }
+
+            </div>
+
+
+
+            <!-- User info -->
+
+            @if (user == null || user.ID != Model.ID)
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Kullanıcı Bilgileri</h4>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table profile__table">
+                            <tbody>
+                                <tr>
+                                    <th><strong>İsim</strong></th>
+                                    <td>@Model.Name<a href="#" style="float:right"></a> </td>
+                                </tr>
+                                <tr>
+                                    <th><strong>Soyisim</strong></th>
+                                    <td>@Model.Surname<a href="#" style="float:right"></a> </td>
+                                </tr>
+                                <tr>
+                                    <th><strong>Ülke</strong></th>
+
+                                    <td>@Model.Country<a href="#" style="float:right"></a> </td>
+                                </tr>
+                                <tr>
+                                    <th><strong>Meslek</strong></th>
+                                    <td>@Model.Job<a href="#" style="float:right"></a></td>
+                                </tr>
+                                <tr>
+                                    <th><strong>Doğum Tarihi</strong></th>
+                                    <td>@Model.DateOfBirth<a href="#" style="float:right"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="panel panel-default mt-4">
+                    <div class="panel-heading">
+                        <h4 class="panel-title" style="float:left;display:block">Kullanıcı Bilgileri</h4>
+                    </div>
+                    <div class="panel-body">
+
+                        <table class="table profile__table">
+
+                            <tbody>
+
+                                <tr>
+                                    <th><strong>İsim</strong></th>
+                                    <td>
+                                        <form class="col-auto" id="1" name="form1">
+
+                                            <text class="mr-5" style="float:left;display:inline-block">{{person.Name}}</text>
+
+                                            <input type="text" name="text" class="form-control col-sm-5 mb-1 ml-1" style="display:none" value="{{person.Name}}" ng-minlength="5" ng-maxlength="15" ng-model="person.Name" />
+
+
+                                            <a href="#" ng-click="edit(1,person)" style="float:right;display:inline-block">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <div class="form-row col-auto" style="float:right;display:none;">
+                                                <button style="float:right" type="button" ng-click="send(1,person)" ng-disabled="form1.$invalid" class="btn btn-success">Kaydet</button>
+                                                <button style="float:right" type="button" ng-click="cancel(1)" class="btn btn-danger  ml-1">İptal</button>
+
+                                            </div>
+
+                                            <small ng-show=" minmax1 = form1.text.$error.minlength || form1.text.$error.maxlength" style="color:red;float:left">İsim Minumum 5 Maximum 15 Karakter Olmalıdır</small>
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><strong>Soyisim</strong></th>
+                                    <td>
+                                        <form class="col-auto" id="2" name="form2">
+
+                                            <text class="mr-5" style="float:left;display:inline-block">{{person.Surname}}</text>
+
+                                            <input type="text" name="text" class="form-control col-sm-5 mb-1 ml-1" style="display:none" ng-minlength="5" value="{{person.Surname}}" ng-maxlength="15" ng-model="person.Surname" />
+
+
+                                            <a href="#" ng-click="edit(2,person)" style="float:right;display:inline-block">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <div class="form-row col-auto" style="float:right;display:none;">
+                                                <button style="float:right" type="button" ng-click="send(2,person)" ng-disabled="form2.$invalid" class="btn btn-success">Kaydet</button>
+                                                <button style="float:right" type="button" ng-click="cancel(2)" class="btn btn-danger  ml-1">İptal</button>
+
+                                            </div>
+
+                                            <small ng-show="minmax2 = form2.text.$error.minlength || form2.text.$error.maxlength " style="color:red;float:left">Soyisim Minumum 5 Maximum 15 Karakter Olmalıdır</small>
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th><strong>E-Posta</strong></th>
+                                    <td>
+                                        <form class="col-auto" id="3" name="form3">
+
+                                            <text class="mr-5" style="float:left;display:inline-block">{{person.Email}}</text>
+
+                                            <input type="text" name="text" class="form-control col-sm-5 mb-1 ml-1" style="display:none" ng-minlength="5" value="{{person.Email}}" ng-maxlength="45" ng-model="person.Email" />
+
+
+                                            <a href="#" ng-click="edit(3,person)" style="float:right;display:inline-block">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <div class="form-row col-auto" style="float:right;display:none;">
+                                                <button style="float:right" type="button" ng-click="send(3,person)" ng-disabled="form3.$invalid" class="btn btn-success">Kaydet</button>
+                                                <button style="float:right" type="button" ng-click="cancel(3)" class="btn btn-danger  ml-1">İptal</button>
+
+                                            </div>
+
+                                            <small ng-show="minmax3 = form3.text.$error.minlength || form3.text.$error.maxlength " style="color:red;float:left">E-Posta Minumum 5 Maximum 15 Karakter Olmalıdır</small>
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th><strong>Meslek</strong></th>
+                                    <td>
+                                        <form class="col-auto" id="4" name="form4">
+
+                                            <text class="mr-5" style="float:left;display:inline-block">{{person.Job}}</text>
+
+                                            <input type="text" name="text" class="form-control col-sm-5 mb-1 ml-1" style="display:none" ng-minlength="5" value="{{person.Job}}" ng-maxlength="45" ng-model="person.Job" />
+
+
+                                            <a href="#" ng-click="edit(4,person)" style="float:right;display:inline-block">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <div class="form-row col-auto" style="float:right;display:none;">
+                                                <button style="float:right" type="button" ng-click="send(4,person)" ng-disabled="form4.$invalid" class="btn btn-success">Kaydet</button>
+                                                <button style="float:right" type="button" ng-click="cancel(4)" class="btn btn-danger  ml-1">İptal</button>
+
+                                            </div>
+
+                                            <small ng-show="minmax4 = form4.text.$error.minlength || form4.text.$error.maxlength " style="color:red;float:left">Meslek Minumum 5 Maximum 15 Karakter Olmalıdır</small>
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <th><strong>Doğum Tarihi</strong></th>
+                                    <td>
+                                        <form class="col-auto" id="5" name="form5">
+
+                                            <text class="mr-5" style="float:left;display:inline-block">{{person.DateOfBirth}}</text>
+
+                                            <input type="text" name="text" class="form-control col-sm-5 mb-1 ml-1" style="display:none" ng-minlength="5" value="{{person.DateOfBirth}}" ng-maxlength="35" ng-model="person.DateOfBirth" />
+
+
+                                            <a href="#" ng-click="edit(5,person)" style="float:right;display:inline-block">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <div class="form-row col-auto" style="float:right;display:none;">
+                                                <button style="float:right" type="button" ng-click="send(5,person)" ng-disabled="form5.$invalid" class="btn btn-success">Kaydet</button>
+                                                <button style="float:right" type="button" ng-click="cancel(5)" class="btn btn-danger  ml-1">İptal</button>
+
+                                            </div>
+
+                                            <small ng-show="minmax5 = form5.text.$error.minlength || form5.text.$error.maxlength " style="color:red;float:left">Doğum Tarihi Minumum 5 Maximum 15 Karakter Olmalıdır</small>
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+     
+                                <tr>
+                                    <th><strong>Ülke</strong></th>
+                                    <td>
+                                        <form class="col-auto" id="6" name="form6">
+
+                                            <text class="mr-5" style="float:left;display:inline-block">{{person.Country}}</text>
+
+                                            <input type="text" name="text" class="form-control col-sm-5 mb-1 ml-1" style="display:none" ng-minlength="3" value="{{person.Country}}" ng-maxlength="15" ng-model="person.Country" />
+
+
+                                            <a href="#" ng-click="edit(6,person)" style="float:right;display:inline-block">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+
+                                            <div class="form-row col-auto" style="float:right;display:none;">
+                                                <button style="float:right" type="button" ng-click="send(6,person)" ng-disabled="form6.$invalid" class="btn btn-success">Kaydet</button>
+                                                <button style="float:right" type="button" ng-click="cancel(6)" class="btn btn-danger  ml-1">İptal</button>
+
+                                            </div>
+
+                                            <small ng-show="minmax6 = form6.text.$error.minlength || form6.text.$error.maxlength " style="color:red;float:left">Ülke Minumum 3 Maximum 15 Karakter Olmalıdır</small>
+
+                                        </form>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            }
+
+
+            <!-- Community -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Topluluk</h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table profile__table">
+                        <tbody>
+                            <tr>
+                                <th><strong>Yorum Sayısı</strong></th>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <th><strong>Zamandan Beri Üye</strong></th>
+                                <td>12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Latest posts -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Latest posts</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="profile__comments">
+                        <div class="profile-comments__item">
+                            <div class="profile-comments__controls">
+                                <a href="#"><i class="fa fa-share-square-o"></i></a>
+                                <a href="#"><i class="fa fa-edit"></i></a>
+                                <a href="#"><i class="fa fa-trash-o"></i></a>
+                            </div>
+                            <div class="profile-comments__avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="...">
+                            </div>
+                            <div class="profile-comments__body">
+                                <h5 class="profile-comments__sender">
+                                    Richard Roe <small>2 hours ago</small>
+                                </h5>
+                                <div class="profile-comments__content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, corporis. Voluptatibus odio perspiciatis non quisquam provident, quasi eaque officia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-comments__item">
+                            <div class="profile-comments__controls">
+                                <a href="#"><i class="fa fa-share-square-o"></i></a>
+                                <a href="#"><i class="fa fa-edit"></i></a>
+                                <a href="#"><i class="fa fa-trash-o"></i></a>
+                            </div>
+                            <div class="profile-comments__avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="...">
+                            </div>
+                            <div class="profile-comments__body">
+                                <h5 class="profile-comments__sender">
+                                    Richard Roe <small>5 hours ago</small>
+                                </h5>
+                                <div class="profile-comments__content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero itaque dolor laboriosam dolores magnam mollitia, voluptatibus inventore accusamus illo.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-comments__item">
+                            <div class="profile-comments__controls">
+                                <a href="#"><i class="fa fa-share-square-o"></i></a>
+                                <a href="#"><i class="fa fa-edit"></i></a>
+                                <a href="#"><i class="fa fa-trash-o"></i></a>
+                            </div>
+                            <div class="profile-comments__avatar">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="...">
+                            </div>
+                            <div class="profile-comments__body">
+                                <h5 class="profile-comments__sender">
+                                    Richard Roe <small>1 day ago</small>
+                                </h5>
+                                <div class="profile-comments__content">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, esse, magni aliquam quisquam modi delectus veritatis est ut culpa minus repellendus.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-3">
+
+            <!-- Contact user -->
+            <p>
+                <a href="#" class="profile__contact-btn btn btn-lg btn-block btn-info" data-toggle="modal" data-target="#profile__contact-form">
+                    Contact user
+                </a>
+            </p>
+
+            <hr class="profile__contact-hr">
+
+            <!-- Contact info -->
+            <div class="profile__contact-info">
+
+                <div class="profile__contact-info-item">
+                    <div class="profile__contact-info-body">
+                        <h5 class="profile__contact-info-heading">E-mail Adresi</h5>
+                        <a href="mailto:admin@domain.com">@Model.Email</a>
+                    </div>
+                </div>
+                <div class="profile__contact-info-item">
+                    <div class="profile__contact-info-body">
+                        <h5 class="profile__contact-info-heading">Web Site</h5>
+                        <a href="www.google.com">@Model.Email</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+C:\Users\mehme\source\repos\MyEvernoteSolution\Myevirnote.Entities\bin\Debug\MyEvirnote.Entities.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\Myevirnote.Entities\bin\Debug\MyEvirnote.Entities.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\Myevirnote.Entities\obj\Debug\MyEvirnote.Entities.csprojAssemblyReference.cache
+C:\Users\mehme\source\repos\MyEvernoteSolution\Myevirnote.Entities\obj\Debug\MyEvirnote.Entities.csproj.CoreCompileInputs.cache
+C:\Users\mehme\source\repos\MyEvernoteSolution\Myevirnote.Entities\obj\Debug\MyEvirnote.Entities.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\Myevirnote.Entities\obj\Debug\MyEvirnote.Entities.pdb

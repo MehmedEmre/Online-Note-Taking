@@ -1,0 +1,30 @@
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\MyEvernote.Common.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\MyEvernote.Common.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Security.AccessControl.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Security.Permissions.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Security.AccessControl.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Security.Permissions.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\obj\Debug\MyEvernote.Common.csproj.CoreCompileInputs.cache
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\obj\Debug\MyEvernote.Common.csproj.CopyComplete
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\obj\Debug\MyEvernote.Common.dll
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\obj\Debug\MyEvernote.Common.pdb
+C:\Users\mehme\source\repos\MyEvernoteSolution\MyEvernote.Common\obj\Debug\MyEvernote.Common.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\MyEvernote.Common.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\MyEvernote.Common.pdb
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Security.AccessControl.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Security.Permissions.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Security.AccessControl.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Security.Permissions.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\obj\Debug\MyEvernote.Common.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\obj\Debug\MyEvernote.Common.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\obj\Debug\MyEvernote.Common.csproj.CopyComplete
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\obj\Debug\MyEvernote.Common.dll
+C:\Users\mehme\Desktop\Online Note Taking\MyEvernote.Common\obj\Debug\MyEvernote.Common.pdb
